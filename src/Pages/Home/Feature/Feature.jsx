@@ -22,7 +22,7 @@ const Feature = () => {
                     <p className="text-gray-700">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate expedita hic dolorem, iusto vel suscipit nam excepturi debitis magnam nostrum! Ut eum dignissimos culpa doloremque eligendi consectetur blanditiis laboriosam fugiat ea quia similique quam nisi reprehenderit numquam magnam nemo vitae cupiditate, atque maiores dicta minus pariatur. Perspiciatis nobis vero quas?
                     </p>
-                    <button className="btn btn-outline border-gray-500 text-gray-700 hover:bg-gray-700 hover:text-white transition-all duration-300">
+                    <button className="btn btn-outline border-0 border-b-4 mt-4">
                         Order Now
                     </button>
                 </div>
