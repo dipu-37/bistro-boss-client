@@ -26,7 +26,7 @@ const Catagori = () => {
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwipe mb-24"
+                className="mySwipe mb-4"
             >
                 <SwiperSlide>
                     <img src={slide1} alt="" />
