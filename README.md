@@ -6,3 +6,5 @@ Important link:
  https://github.com/brillout/awesome-react-components?tab=readme-ov-file#carousel
 3.merakiui:
 https://merakiui.com/components
+4.start rating :
+https://github.com/smastrom/react-rating?tab=readme-ov-file
