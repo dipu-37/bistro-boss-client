@@ -8,3 +8,5 @@ Important link:
 https://merakiui.com/components
 4.start rating :
 https://github.com/smastrom/react-rating?tab=readme-ov-file
+5.Helmet or title
+https://github.com/staylor/react-helmet-async?tab=readme-ov-file#readme
