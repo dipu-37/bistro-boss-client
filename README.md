@@ -12,3 +12,5 @@ https://github.com/smastrom/react-rating?tab=readme-ov-file
 https://github.com/staylor/react-helmet-async?tab=readme-ov-file#readme
 6. tabs :
  https://github.com/reactjs/react-tabs
+7. pagination:
+   https://github.com/AdeleD/react-paginate?tab=readme-ov-file
