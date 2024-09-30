@@ -3,7 +3,7 @@ const FoodCard = ({ item }) => {
 
     return (
         <div className="flex justify-center items-center">
-            <div className="card bg-base-100 w-96 shadow-xl relative rounded-lg overflow-hidden">
+            <div className="card bg-base-100 w-full shadow-xl relative rounded-lg overflow-hidden">
                 <figure className="relative">
                     <img
                         src={image}

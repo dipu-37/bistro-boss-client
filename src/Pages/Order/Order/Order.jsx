@@ -36,7 +36,7 @@ const Order = () => {
     
         <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
             {/* Centering the TabList */}
-            <TabList className="flex justify-center space-x-4 my-4">
+            <TabList className="lg:flex justify-center space-x-4 my-4">
                 <Tab>Salad</Tab>
                 <Tab>Pizza</Tab>
                 <Tab>Soup</Tab>
