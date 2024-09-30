@@ -8,7 +8,6 @@ import { router } from './Routs/Routs.jsx';
 
 // React Helemate 
 import { HelmetProvider } from 'react-helmet-async';
-import ReactDOM from 'react-dom';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
