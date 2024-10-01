@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from "react";
 import FoodCard from "../../../Component/FoodCard/FoodCard";
 import ReactPaginate from 'react-paginate';
 

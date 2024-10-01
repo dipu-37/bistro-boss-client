@@ -13,6 +13,9 @@ const Navbar = () => {
             <li className="mx-2 hover:text-indigo-500">
                 <Link to="/order/salad">ORDER FOOD</Link>
             </li>
+            <li className="mx-2 hover:text-indigo-500">
+                <Link to="login">LOGIN</Link>
+            </li>
 
             
         </>

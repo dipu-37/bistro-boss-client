@@ -8,13 +8,16 @@ import { router } from './Routs/Routs.jsx';
 
 // React Helemate 
 import { HelmetProvider } from 'react-helmet-async';
+import AuthProvider from './Provider/AuthProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='max-w-screen-xl mx-auto	'>
-      <HelmetProvider>
-      <RouterProvider router={router} />
-      </HelmetProvider>
-    </div>
+    <AuthProvider>
+      <div className='max-w-screen-xl mx-auto	'>
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </div>
+    </AuthProvider>
   </StrictMode>,
 )

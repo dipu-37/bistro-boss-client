@@ -16,7 +16,7 @@ const PopularMenu = () => {
     //         )
     // }, [])
 
-    const [menu, loading] = useMenu();
+    const [menu] = useMenu();
     const popularItem = menu.filter(item => item.category === 'popular')
 
     return (
