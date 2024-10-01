@@ -16,3 +16,5 @@ https://github.com/staylor/react-helmet-async?tab=readme-ov-file#readme
    https://github.com/AdeleD/react-paginate?tab=readme-ov-file
 8. simple react captcha
  https://www.npmjs.com/package/react-simple-captcha
+9.react-hook-form : email ,name,passord validation
+https://react-hook-form.com/get-started#Registerfields
