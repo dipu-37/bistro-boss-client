@@ -1,23 +1,49 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { IoMdCart } from "react-icons/io";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
+
     const list = (
         <>
 
-            <li className="mx-2 hover:text-indigo-500">
+            <li>
                 <Link to="/">HOME</Link>
             </li>
-            <li className="mx-2 hover:text-indigo-500">
+            <li >
                 <Link to="/menu">OUR MENU</Link>
             </li>
-            <li className="mx-2 hover:text-indigo-500">
+            <li>
                 <Link to="/order/salad">ORDER FOOD</Link>
             </li>
-            <li className="mx-2 hover:text-indigo-500">
-                <Link to="login">LOGIN</Link>
+            <li>
+                <Link to={"/"}>
+                    <button className="btn">
+                    <IoMdCart />
+                        <div className="badge badge-secondary">+99</div>
+                    </button>
+                </Link>
             </li>
 
-            
+            {
+                user ? <>
+                    <li onClick={handleLogOut} className="mx-2 hover:text-indigo-500">
+                        <Link to="login">LOGOUT</Link>
+                    </li>
+                </> :
+                    <><li className="mx-2 hover:text-indigo-500">
+                        <Link to="login">LOGIN</Link>
+                    </li> </>
+            }
+
+
         </>
     );
 
@@ -68,7 +94,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <button >
-                        USER
+                        BISTRO USER
                     </button>
                 </div>
             </div>

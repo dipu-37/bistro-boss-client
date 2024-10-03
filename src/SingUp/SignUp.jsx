@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUp = () => {
+  const {updateUserProfile , createUser}=useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/login';
@@ -15,13 +16,20 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const {createUser} = useContext(AuthContext);
+  
   const onSubmit = (data) => {
     console.log(data)
     createUser(data.email,data.password)
     .then(result=>{
       const LoggedUser = result.user;
       console.log(LoggedUser);
+      updateUserProfile(data.name, data.photoUrl)
+      .then(()=>{
+        console.log('user profile info update')
+      })
+      .catch(error =>{
+        console.log(error)
+      })
       navigate(from);
     })
   }
@@ -54,6 +62,16 @@ const SignUp = () => {
                 <input type="text" {...register("name", { required: true })} name="name" placeholder="Name" className="input input-bordered" />
                 {errors.name && <span className="text-red-600">Name is required</span>}
               </div>
+
+              {/* photo url  */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input type="text" {...register("photoUrl", { required: true })} name="photoUrl" placeholder="Photo URL" className="input input-bordered" />
+                {errors.name && <span className="text-red-600">Photo Url is required</span>}
+              </div>
+
               {/* Email Input */}
               <div className="form-control">
                 <label className="label text-gray-700 dark:text-gray-300">

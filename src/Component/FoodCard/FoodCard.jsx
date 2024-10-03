@@ -1,6 +1,10 @@
 const FoodCard = ({ item }) => {
     const { name, image, price, recipe } = item;
 
+    const handleAddToCart = food =>{
+        console.log(food);
+    }
+
     return (
         <div className="flex justify-center items-center">
             <div className="card bg-base-100 w-full shadow-xl relative rounded-lg overflow-hidden">
@@ -17,7 +21,9 @@ const FoodCard = ({ item }) => {
                     {/* Apply line-clamp-2 to the recipe description */}
                     <p className="text-gray-600 my-2 line-clamp-2">{recipe}</p>
                     <div className="card-actions justify-center">
-                    <button className="btn btn-outline border-0 border-b-4 mb-4 bg-slate-200 border-orange-400 ">Add to Card</button>
+                    <button 
+                    onClick={()=>handleAddToCart(item)}
+                    className="btn btn-outline border-0 border-b-4 mb-4 bg-slate-200 border-orange-400 ">Add to Card</button>
                     </div>
                 </div>
             </div>
