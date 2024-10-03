@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Link to={"/"}>
                     <button className="btn">
                     <IoMdCart />
-                        <div className="badge badge-secondary">+99</div>
+                        <div className="badge badge-secondary">00</div>
                     </button>
                 </Link>
             </li>
