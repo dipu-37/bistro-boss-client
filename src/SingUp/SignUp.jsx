@@ -37,7 +37,7 @@ const SignUp = () => {
             }
             console.log(userInfo);
             // post userInfo in mongodb 
-            axiosPublic.post('/user', userInfo)
+            axiosPublic.post('/users', userInfo)
               .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
