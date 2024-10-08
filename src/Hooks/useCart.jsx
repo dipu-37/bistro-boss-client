@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "./useAxiosSecure";
 import useAuth from "./useAuth";
 
+
 const useCart = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
@@ -22,3 +23,5 @@ const useCart = () => {
 };
 
 export default useCart;
+
+// when i click add to cart button data are store in mongodb . then i use useCart hook fetch the data just use for email . go to the cart componet and see , and navbar component , 

@@ -4,34 +4,61 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignUp = () => {
-  const {updateUserProfile , createUser}=useContext(AuthContext)
+  const { updateUserProfile, createUser } = useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
+  const axiosPublic = useAxiosPublic();
   const from = location.state?.from?.pathname || '/login';
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  
+
   const onSubmit = (data) => {
     console.log(data)
-    createUser(data.email,data.password)
-    .then(result=>{
-      const LoggedUser = result.user;
-      console.log(LoggedUser);
-      updateUserProfile(data.name, data.photoUrl)
-      .then(()=>{
-        console.log('user profile info update')
+    createUser(data.email, data.password)
+      .then(result => {
+        const LoggedUser = result.user;
+        console.log(LoggedUser);
+        updateUserProfile(data.name, data.photoUrl)
+          .then(() => {
+            // create user entry in the database 
+            const userInfo = {
+              name: data.name,
+              email: data.email
+            }
+            console.log(userInfo);
+            // post userInfo in mongodb 
+            axiosPublic.post('/user', userInfo)
+              .then(res => {
+                console.log(res)
+                if (res.data.insertedId) {
+                  console.log('user added in the data base');
+                  reset();
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                }
+              })
+            console.log('user profile info update')
+          })
+          .catch(error => {
+            console.log(error)
+          })
+        navigate(from);
       })
-      .catch(error =>{
-        console.log(error)
-      })
-      navigate(from);
-    })
   }
   return (
     <>
@@ -116,6 +143,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
+            <SocialLogin></SocialLogin>
             <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-300">
               Already have an account?{" "}
               <Link className="text-blue-500 hover:underline" to="/login">

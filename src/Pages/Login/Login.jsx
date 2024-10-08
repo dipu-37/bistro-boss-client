@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import SocialLogin from "../../SocialLogin/SocialLogin";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -125,7 +126,9 @@ const Login = () => {
                                     Login
                                 </button>
                             </div>
+                            
                         </form>
+                        <SocialLogin></SocialLogin>
                         <p className="text-center mt-4">
                             <small>
                                 New here?{" "}
