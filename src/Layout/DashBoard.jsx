@@ -5,11 +5,12 @@ import { VscPreview } from "react-icons/vsc";
 import { TbBrandBooking } from "react-icons/tb";
 import { IoMenu } from "react-icons/io5";
 import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 const DashBoard = () => {
     const [cart] = useCart()
     // TODO : get admin value form the database 
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
 
