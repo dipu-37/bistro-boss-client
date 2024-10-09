@@ -15,7 +15,15 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user =>{
-        console.log(user)
+        console.log(user);
+        axiosSecure.patch(`/users/admin/${user._id}`)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                alert('updata succrssful')
+            }
+        })
     }
      
     const handleDeleteUser = user => {
@@ -72,15 +80,17 @@ const AllUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
+                                   {  user.role === 'admin' ? 'Admin' :
                                     <button
                                     onClick={()=>{handleMakeAdmin(user)}}
                                         className="btn btn-lg bg-orange-500">
                                         <FaUsers className="text-white 
                                         text-2xl"></FaUsers>
-                                    </button>
+                                    </button>}
                                 </td>
                                 <td>
-                                    <button
+                                    
+                                        <button
                                         onClick={() => handleDeleteUser(user)}
                                         className="btn btn-ghost btn-lg">
                                         <FaTrashAlt className="text-red-600"></FaTrashAlt>
