@@ -33,20 +33,21 @@ const OrderTap = ({ items }) => {
                 breakLabel="..."
                 nextLabel="next >"
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
+                pageRangeDisplayed={3} // Reduce page range displayed on smaller screens
                 pageCount={pageCount}
                 previousLabel="< previous"
-                containerClassName="flex justify-center m-4 gap-6" // Center the pagination
+                containerClassName="flex flex-wrap justify-center m-2 lg:m-4 lg:gap-6 gap-2" // Flex wrap for mobile and smaller margin
                 pageClassName="mx-1"
-                pageLinkClassName="px-3 py-1 border rounded hover:bg-blue-500 hover:text-white"
+                pageLinkClassName="px-2 py-1 md:px-3 md:py-1 border rounded text-sm md:text-base hover:bg-blue-500 hover:text-white" // Smaller padding and font on mobile
                 previousClassName="mx-1"
-                previousLinkClassName="px-3 py-1 border rounded hover:bg-blue-500 hover:text-white"
+                previousLinkClassName="px-2 py-1 md:px-3 md:py-1 border rounded text-sm md:text-base hover:bg-blue-500 hover:text-white"
                 nextClassName="mx-1"
-                nextLinkClassName="px-3 py-1 border rounded hover:bg-blue-500 hover:text-white"
+                nextLinkClassName="px-2 py-1 md:px-3 md:py-1 border rounded text-sm md:text-base hover:bg-blue-500 hover:text-white"
                 breakClassName="mx-1"
-                breakLinkClassName="px-3 py-1 border rounded"
-                activeClassName="bg-blue-500 text-white" // Style for active page
+                breakLinkClassName="px-2 py-1 md:px-3 md:py-1 border rounded text-sm"
+                activeClassName="bg-blue-500 text-white"
             />
+
         </>
     );
 };

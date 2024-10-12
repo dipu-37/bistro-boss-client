@@ -13,7 +13,7 @@ const useCart = () => {
             
             // Send the email as a query parameter to the server
             const res = await axiosSecure.get(`/carts?email=${user.email}`);
-            console.log(res.data)
+           // console.log(res.data)
             return res.data;
         },
         enabled: !!user?.email // Ensure query only runs when email is available

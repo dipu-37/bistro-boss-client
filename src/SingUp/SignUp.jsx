@@ -23,7 +23,7 @@ const SignUp = () => {
 
 
   const onSubmit = (data) => {
-    console.log(data)
+    //console.log(data)
     createUser(data.email, data.password)
       .then(result => {
         const LoggedUser = result.user;
@@ -35,11 +35,11 @@ const SignUp = () => {
               name: data.name,
               email: data.email
             }
-            console.log(userInfo);
+           // console.log(userInfo);
             // post userInfo in mongodb 
             axiosPublic.post('/users', userInfo)
               .then(res => {
-                console.log(res)
+               // console.log(res)
                 if (res.data.insertedId) {
                   console.log('user added in the data base');
                   reset();
@@ -52,7 +52,7 @@ const SignUp = () => {
                   });
                 }
               })
-            console.log('user profile info update')
+           // console.log('user profile info update')
           })
           .catch(error => {
             console.log(error)

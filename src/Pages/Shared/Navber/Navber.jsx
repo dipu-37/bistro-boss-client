@@ -32,13 +32,16 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/dashboard/cart">
-          <button className="btn btn-ghost normal-case text-xl font-bold tracking-wider">
-            <IoMdCart />
-            <div className="badge badge-secondary">+{cart.length}</div>
-          </button>
-        </Link>
-      </li>
+  <Link to="/dashboard/cart">
+    <div className="flex items-center badge badge-secondary">
+      <IoMdCart />
+      {cart.length > 0 && (
+        <div className=" badge badge-secondary">+{cart.length}</div>
+      )}
+    </div>
+  </Link>
+</li>
+
 
       {user ? (
         <li
@@ -78,7 +81,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white-400 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white-400 rounded-box w-52 bg-gradient-to-r from-red-700 via-red-500 to-red-700"
             >
               {list}
             </ul>
@@ -90,14 +93,14 @@ const Navbar = () => {
             Bistro Boss
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1 space-x-4 font-semibold">
             {list}
           </ul>
         </div>
         <div className="navbar-end hidden lg:flex">
           <button className="btn btn-ghost normal-case text-xl font-bold tracking-wider hover:text-white">
-            BISTRO USER
+            BISTRO USER 
           </button>
         </div>
       </div>
