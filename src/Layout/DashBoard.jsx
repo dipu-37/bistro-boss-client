@@ -54,7 +54,7 @@ const DashBoard = () => {
                                 <li>
                                     <NavLink to="/dashboard/reservation">
                                         <FaCalendar></FaCalendar>
-                                        Reservation </NavLink>
+                                       Reservation </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/cart">
@@ -66,9 +66,9 @@ const DashBoard = () => {
                                         Add Review </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/bookings">
+                                    <NavLink to="/dashboard/paymentHistory">
                                         <TbBrandBooking />
-                                        My Booking </NavLink>
+                                        Payment History </NavLink>
                                 </li>
 
                             </>
