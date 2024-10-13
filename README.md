@@ -18,3 +18,8 @@ https://github.com/staylor/react-helmet-async?tab=readme-ov-file#readme
  https://www.npmjs.com/package/react-simple-captcha
 9.react-hook-form : email ,name,passord validation
 https://react-hook-form.com/get-started#Registerfields
+10. payment method : stripe link
+  stripe account api, secret key -----> https://dashboard.stripe.com/test/apikeys
+  react-stripe-git ------->  https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
+  stripe-dock ----------> https://docs.stripe.com/payments/quickstart?lang=node&client=react
+ stripe test card ---->https://docs.stripe.com/testing
