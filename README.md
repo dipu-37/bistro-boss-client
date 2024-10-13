@@ -22,4 +22,4 @@ https://react-hook-form.com/get-started#Registerfields
   stripe account api, secret key -----> https://dashboard.stripe.com/test/apikeys
   react-stripe-git ------->  https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
   stripe-dock ----------> https://docs.stripe.com/payments/quickstart?lang=node&client=react
-  
+ stripe test card ---->https://docs.stripe.com/testing
