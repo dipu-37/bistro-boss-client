@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { IoMdCart } from "react-icons/io";
 import useCart from "../../../Hooks/useCart";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [cart]=useCart();
-  console.log(cart)
+  console.log(user)
+  const [cart] = useCart();
+  const  [isAdmin]= useAdmin();
+  //console.log(cart)
   const handleLogOut = () => {
     logOut()
       .then()
@@ -16,31 +19,26 @@ const Navbar = () => {
 
   const list = (
     <>
+      <li> <Link to="/" > HOME</Link> </li>
+      <li> <Link to="/menu"> OUR MENU  </Link> </li>
+      <li> <Link to="/order/salad">  ORDER FOOD </Link> </li>
+
+    {
+      user && isAdmin && <li> <Link to="/dashboard/adminHome"> Dashboard </Link> </li>
+    }
+    {
+      user && !isAdmin && <li> <Link to="/dashboard/userHome"> Dashboard </Link> </li>
+    }
       <li>
-        <Link to="/" >
-          HOME
+        <Link to="/dashboard/cart">
+          <div className="flex items-center badge badge-secondary ">
+            <IoMdCart />
+            {cart.length > 0 && (
+              <div className=" badge badge-secondary ">+{cart.length}</div>
+            )}
+          </div>
         </Link>
       </li>
-      <li>
-        <Link to="/menu">
-          OUR MENU
-        </Link>
-      </li>
-      <li>
-        <Link to="/order/salad">
-          ORDER FOOD
-        </Link>
-      </li>
-      <li>
-  <Link to="/dashboard/cart">
-    <div className="flex items-center badge badge-secondary">
-      <IoMdCart />
-      {cart.length > 0 && (
-        <div className=" badge badge-secondary">+{cart.length}</div>
-      )}
-    </div>
-  </Link>
-</li>
 
 
       {user ? (
@@ -100,7 +98,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <button className="btn btn-ghost normal-case text-xl font-bold tracking-wider hover:text-white">
-            BISTRO USER 
+           {
+            user?.displayName
+           }
           </button>
         </div>
       </div>
